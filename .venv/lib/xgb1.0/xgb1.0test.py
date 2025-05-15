@@ -140,6 +140,10 @@ karsilastirma = karsilastirma.sort_values(by = "id")
 
 karsilastirma[["id","ürün", "tahmin fiyat", "ürün fiyatı", "1_fiyat", "2_fiyat", "3_fiyat"]].to_csv("xgb1.0test.csv", index = False)
 
+karsilastirma = karsilastirma.head(100)
+
+karsilastirma[["id","ürün", "tahmin fiyat", "ürün fiyatı", "1_fiyat", "2_fiyat", "3_fiyat"]].to_csv("xgb1.0test(100).csv", index = False)
+
 xgb.plot_importance(modelxgb, max_num_features=20)
 plt.savefig("feature_importance1.0.png", dpi=300, bbox_inches="tight")
 
